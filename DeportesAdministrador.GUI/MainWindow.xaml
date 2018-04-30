@@ -1,0 +1,34 @@
+﻿<Window x:Class="DeportesAdministrador.GUI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DeportesAdministrador.GUI"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="652" Width="890">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="Imagenes/fond.png"/>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Label Grid.Column="1" Grid.Row="0" Margin="10,65,261,175" Grid.RowSpan="2" Grid.ColumnSpan="2">
+            <Label.Background>
+                <ImageBrush ImageSource="Imagenes/deportes10.png"/>
+            </Label.Background>
+        </Label>
+        <TextBlock Grid.Column="1" Grid.Row="1" FontSize="21.333" Margin="33,77,167,101" FontWeight="Bold">Usuario:</TextBlock>
+        <TextBox x:Name="txbUsuario" Grid.Column="1" Grid.Row="1" Margin="0,77,268,92" HorizontalAlignment="Right" Width="188" FontSize="21.333" Grid.ColumnSpan="2"></TextBox>
+        <TextBlock Grid.Column="1" Grid.Row="1" FontSize="21.333" Margin="10,167,167,10" FontWeight="Bold">Contraseña:</TextBlock>
+        <TextBox x:Name="txbContraseña" Grid.Column="1" Grid.Row="1" Margin="0,158,268,10" HorizontalAlignment="Right" Width="188" FontSize="21.333" Grid.ColumnSpan="2"></TextBox>
+        <Button x:Name="btnAceptar" Grid.Column="1" Grid.Row="2" Margin="132,30,10,122" FontSize="21.333" Click="btnAceptar_Click">Aceptar</Button>
+    </Grid>
+</Window>

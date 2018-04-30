@@ -1,0 +1,39 @@
+﻿<Window x:Class="DeportesAdministrador.GUI.CDeportes"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DeportesAdministrador.GUI"
+        mc:Ignorable="d"
+        Title="CDeportes" Height="652" Width="890">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush/>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Label Grid.Column="1" Grid.Row="0" Margin="0,63,0,177" Grid.RowSpan="2">
+            <Label.Background>
+                <ImageBrush ImageSource="Imagenes/deportesfondo2.jpg"/>
+            </Label.Background>
+        </Label>
+        <Button x:Name="btnDeporte" FontSize="21.333" Margin="156,119,0,42" Grid.Row="1" FontWeight="Bold" Click="btnDeporte_Click">Deporte</Button>
+        <Button x:Name="btnEquipo" FontSize="21.333" Margin="87,119,74,42" Grid.Row="1" Grid.Column="1" FontWeight="Bold" Click="btnEquipo_Click">Equipo</Button>
+        <Button x:Name="btnTorneo" FontSize="21.333" Margin="34,119,138,42" Grid.Row="1" Grid.Column="2" FontWeight="Bold" Click="btnTorneo_Click">Torneo</Button>
+        <Button x:Name="btnPuntuacion" FontSize="21.333" Margin="259,10,196,149" Grid.Row="2" FontWeight="Bold" Click="btnPuntuacion_Click_1" Content="Puntuación" Grid.ColumnSpan="2"/>
+        <Button x:Name="btnContraseña" FontSize="21.333" Margin="191,10,176,149" Grid.Row="2" FontWeight="Bold" Click="btnContraseña_Click" Content="Cambiar contraseña" Grid.ColumnSpan="2" Grid.Column="1"/>
+        <Button x:Name="btnRegresar" FontSize="21.333" Margin="104,116,10,31" Grid.Row="2" Grid.Column="2" Click="btnRegresar_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="Imagenes/regresar.png"/>
+            </Button.Background>
+        </Button>
+    </Grid>
+</Window>
