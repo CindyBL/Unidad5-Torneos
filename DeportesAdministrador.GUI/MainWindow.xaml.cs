@@ -12,6 +12,11 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Deportes.BIZ;
+using Deporte.COMMON.Entidades;
+using Deporte.COMMON.Interfaces;
+using Deportes.DAL;
+
 
 namespace DeportesAdministrador.GUI
 {
@@ -20,17 +25,63 @@ namespace DeportesAdministrador.GUI
     /// </summary>
     public partial class MainWindow : Window
     {
+        IManejadorContraseña manejadorContraseña;
         public MainWindow()
         {
             InitializeComponent();
+            manejadorContraseña = new ManejadorDeContraseña(new RepositorioContraseña());
+            cmbUsuario.ItemsSource = null;
+            cmbUsuario.ItemsSource = manejadorContraseña.Listar;
         }
 
         private void btnAceptar_Click(object sender, RoutedEventArgs e)
         {
-            this.Hide();
-            CDeportes elegir = new CDeportes();
-            elegir.Owner = this;
-            elegir.Show();
+            if (cmbUsuario.Text == "")
+
+            {
+                MessageBox.Show("No ha seleccionado su usuario", "Usuario", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
+
+            if (string.IsNullOrEmpty(txbContraseña.Text))
+            {
+                MessageBox.Show("Aun no a ingresado la contraseña", "Inicio", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
+
+            if (cmbUsuario.SelectedItem != null)
+
+            {
+
+                Contraseña b = cmbUsuario.SelectedItem as Contraseña;
+                if (txbContraseña.Text == b.NuevaContraseña)
+                {
+                    CDeportes ir = new CDeportes();
+                    ir.Show();
+                    this.Close();
+                    MainWindow s = new MainWindow();
+
+                }
+                else
+                {
+                    MessageBox.Show("Contraceña incorrecta", "Inicio", MessageBoxButton.OK, MessageBoxImage.Error);
+                    return;
+                }
+
+
+
+
+
+
+            }
+            else
+            {
+                MessageBox.Show("No a  seleccionado ningun usuario", "Inicio", MessageBoxButton.OK, MessageBoxImage.Error);
+
+            }
+
         }
     }
 }

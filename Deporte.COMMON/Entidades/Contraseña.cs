@@ -8,5 +8,9 @@ namespace Deporte.COMMON.Entidades
     {
         public string Usuario { get; set; }
         public string NuevaContraseña { get; set; }
+        public override string ToString()
+        {
+            return Usuario;
+        }
     }
 }

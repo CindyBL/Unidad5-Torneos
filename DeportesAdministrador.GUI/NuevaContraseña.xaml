@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="NuevaContraseña" Height="652" Width="890">
     <Grid>
-        <Label x:Name="Usuario" Margin="404,220,332,364" FontSize="16">Administrador1</Label>
+        <TextBlock x:Name="txbUsuario" Margin="404,220,332,364" FontSize="16">Administrador1</TextBlock>
         <TextBlock Margin="330,225,478,357" FontSize="16">Usuario:</TextBlock>
         <TextBlock Margin="250,292,478,296" FontSize="16">Nueva Contraseña:</TextBlock>
         <TextBox x:Name="txbNuevaContraseña" Margin="404,292,324,296" FontSize="16"></TextBox>
@@ -16,5 +16,7 @@
                 <ImageBrush ImageSource="Imagenes/regresar.png"/>
             </Button.Background>
         </Button>
+        <Button x:Name="btnAceptar" Margin="384,349,368,227" FontSize="16" Click="btnAceptar_Click">Aceptar</Button>
+        <DataGrid x:Name="dtgContraseña" Margin="308,434,324,106"></DataGrid>
     </Grid>
 </Window>
