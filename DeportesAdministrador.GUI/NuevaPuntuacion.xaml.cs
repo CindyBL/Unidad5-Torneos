@@ -36,8 +36,8 @@ namespace DeportesAdministrador.GUI
         public NuevaPuntuacion()
         {
             InitializeComponent();
-            manejadorEquipo = new ManejadorDeEquipo(new RepositorioEquipo());
-            manejadorPuntuacion = new ManejadorDePuntuacion(new RepositorioPuntuacion());
+            manejadorEquipo = new ManejadorDeEquipo(new RepositorioGenerico<Equipo>());
+            manejadorPuntuacion = new ManejadorDePuntuacion(new RepositorioGenerico<Puntuacion>());
             HabilitarCajas(false);
             HabilitarBotones(true);
             ActualizarTabla();
@@ -88,7 +88,7 @@ namespace DeportesAdministrador.GUI
             if (pro != null)
             {
                 HabilitarCajas(true);
-                txbEquipoId.Text = pro.Id;
+                txbEquipoId.Text = pro.Id.ToString();
                 txbPuntos.Text = pro.Puntos;
                 cmbEquipo.Text = pro.Equipo;
                 accionPuntuacion = accion.Editar;

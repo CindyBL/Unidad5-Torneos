@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using Deporte.COMMON.Entidades;
+using MongoDB.Bson;
 
 namespace Deporte.COMMON.Interfaces
 {
@@ -10,6 +11,6 @@ namespace Deporte.COMMON.Interfaces
         bool Create(T entidad);
         List<T> Read { get; }
         bool Update(T entidadModificada);
-        bool Delete(string id);
+        bool Delete(ObjectId id);
     }
 }

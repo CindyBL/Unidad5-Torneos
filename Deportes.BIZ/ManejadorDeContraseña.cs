@@ -4,6 +4,7 @@ using System.Text;
 using Deporte.COMMON.Entidades;
 using Deporte.COMMON.Interfaces;
 using System.Linq;
+using MongoDB.Bson;
 
 namespace Deportes.BIZ
 {
@@ -23,12 +24,12 @@ namespace Deportes.BIZ
             return repositorio.Create(entidad);
         }
 
-        public Contraseña BuscarPorId(string id)
+        public Contraseña BuscarPorId(ObjectId id)
         {
             return Listar.Where(e => e.Id == id).SingleOrDefault();
         }
 
-        public bool Eliminar(string id)
+        public bool Eliminar(ObjectId id)
         {
             return repositorio.Delete(id);
         }

@@ -29,7 +29,7 @@ namespace DeportesAdministrador.GUI
         public MainWindow()
         {
             InitializeComponent();
-            manejadorContraseña = new ManejadorDeContraseña(new RepositorioContraseña());
+            manejadorContraseña = new ManejadorDeContraseña(new RepositorioGenerico<Contraseña>());
             cmbUsuario.ItemsSource = null;
             cmbUsuario.ItemsSource = manejadorContraseña.Listar;
         }
@@ -50,11 +50,9 @@ namespace DeportesAdministrador.GUI
                 return;
             }
 
-
             if (cmbUsuario.SelectedItem != null)
 
             {
-
                 Contraseña b = cmbUsuario.SelectedItem as Contraseña;
                 if (txbContraseña.Password == b.NuevaContraseña)
                 {
@@ -62,19 +60,12 @@ namespace DeportesAdministrador.GUI
                     ir.Show();
                     this.Close();
                     MainWindow s = new MainWindow();
-
                 }
                 else
                 {
                     MessageBox.Show("Contraceña incorrecta", "Inicio", MessageBoxButton.OK, MessageBoxImage.Error);
                     return;
                 }
-
-
-
-
-
-
             }
             else
             {

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using Deporte.COMMON.Entidades;
+using MongoDB.Bson;
 
 namespace Deporte.COMMON.Interfaces
 {
@@ -9,8 +10,8 @@ namespace Deporte.COMMON.Interfaces
     {
         bool Agregar(T entidad);
         List<T> Listar { get; }
-        bool Eliminar(string id);
+        bool Eliminar(ObjectId id);
         bool Modificar(T entidad);
-        T BuscarPorId(string id);
+        T BuscarPorId(ObjectId id);
     }
 }

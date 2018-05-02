@@ -36,8 +36,8 @@ namespace DeportesAdministrador.GUI
         public NuevoTorneo()
         {
             InitializeComponent();
-            manejadorEquipo = new ManejadorDeEquipo(new RepositorioEquipo());
-            manejadorTorneo = new ManejadorDeTorneo(new RepositorioTorneo());
+            manejadorEquipo = new ManejadorDeEquipo(new RepositorioGenerico<Equipo>());
+            manejadorTorneo = new ManejadorDeTorneo(new RepositorioGenerico<Torneo>());
             HabilitarCajas(false);
             HabilitarBotones(true);
             ActualizarTabla();
@@ -89,7 +89,7 @@ namespace DeportesAdministrador.GUI
             if (pro != null)
             {
                 HabilitarCajas(true);
-                txbEquipoId.Text = pro.Id;
+                txbEquipoId.Text = pro.Id.ToString();
                 cmbEquipo1.Text = pro.Equipo1;
                 cmbEquipo2.Text = pro.Equipo2;
                 accionTorneo = accion.Editar;

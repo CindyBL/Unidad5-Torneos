@@ -36,7 +36,7 @@ namespace DeportesAdministrador.GUI
         public NuevoDeporte()
         {
             InitializeComponent();
-            manejadorDeporte = new ManejadorDeDeportes(new RepositorioDeportes());
+            manejadorDeporte = new ManejadorDeDeportes(new RepositorioGenerico<Deportess>());
             HabilitarCajas(false);
             HabilitarBotones(true);
             ActualizarTabla();
@@ -85,7 +85,7 @@ namespace DeportesAdministrador.GUI
             {
                 HabilitarCajas(true);
                 txbNombreDeporte.Text = cli.NombreDeporte;
-                txbDeportesId.Text = cli.Id;
+                txbDeportesId.Text = cli.Id.ToString();
                 accionDeporte = accion.Editar;
                 HabilitarBotones(false);
             }

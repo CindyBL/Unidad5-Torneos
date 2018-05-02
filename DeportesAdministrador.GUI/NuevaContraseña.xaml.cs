@@ -35,7 +35,7 @@ namespace DeportesAdministrador.GUI
         public NuevaContraseña()
         {
             InitializeComponent();
-            manejadorContraseña = new ManejadorDeContraseña(new RepositorioContraseña());
+            manejadorContraseña = new ManejadorDeContraseña(new RepositorioGenerico<Contraseña>());
             //HabilitarCajas(false);
             HabilitarBotones(true);
             ActualizarTabla();
@@ -114,7 +114,7 @@ namespace DeportesAdministrador.GUI
             Contraseña pro = dtgContraseña.SelectedItem as Contraseña;
             if (pro != null)
             {
-                txbEquipoId.Text = pro.Id;
+                txbEquipoId.Text = pro.Id.ToString();
                 txbUsuario.Text = pro.Usuario;
                 txbNuevaContraseña.Text = pro.NuevaContraseña;
                 accionn = accion.Editar;
