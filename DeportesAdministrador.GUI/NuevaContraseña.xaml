@@ -7,9 +7,12 @@
         mc:Ignorable="d"
         Title="NuevaContraseña" Height="652" Width="890">
     <Grid>
-        <TextBlock x:Name="txbUsuario" Margin="404,220,332,364" FontSize="16">Administrador1</TextBlock>
-        <TextBlock Margin="330,225,478,357" FontSize="16">Usuario:</TextBlock>
-        <TextBlock Margin="250,292,478,296" FontSize="16">Nueva Contraseña:</TextBlock>
+        <Grid.Background>
+            <ImageBrush ImageSource="Imagenes/desenfocado-1913.jpg"/>
+        </Grid.Background>
+        <TextBlock x:Name="txbUsuario" Margin="412,227,324,357" FontSize="18" FontWeight="Bold">Administrador1</TextBlock>
+        <TextBlock Margin="330,225,478,357" FontSize="18" FontWeight="Bold">Usuario:</TextBlock>
+        <TextBlock Margin="236,292,478,296" FontSize="18" FontWeight="Bold">Nueva Contraseña:</TextBlock>
         <TextBox x:Name="txbNuevaContraseña" Margin="404,292,324,296" FontSize="16"></TextBox>
         <Button x:Name="btnRegresar" FontSize="21.333" Margin="664,513,46,36" Click="btnRegresar_Click">
             <Button.Background>
@@ -26,8 +29,8 @@
                 <ImageBrush ImageSource="Imagenes/cancelar.png"/>
             </Button.Background>
         </Button>
-        <Button x:Name="btnAceptar" Margin="384,349,368,227" FontSize="16" Click="btnAceptar_Click">Aceptar</Button>
-        <DataGrid x:Name="dtgContraseña" Margin="308,434,324,106"></DataGrid>
+        <Button x:Name="btnAceptar" Margin="384,349,368,227" FontSize="18" Click="btnAceptar_Click" FontWeight="Bold">Aceptar</Button>
+        <DataGrid x:Name="dtgContraseña" Margin="308,434,324,106" FontSize="16"></DataGrid>
         <TextBlock Margin="613,292,227,312" RenderTransformOrigin="0.473,0.63" FontSize="16" Foreground="#FF4ACF23" Background="White">Id:</TextBlock>
         <TextBlock x:Name="txbEquipoId" Margin="655,292,86,302"/>
     </Grid>

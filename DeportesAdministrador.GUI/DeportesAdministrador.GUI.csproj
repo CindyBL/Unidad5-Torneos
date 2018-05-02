@@ -185,5 +185,9 @@
       <Name>Deportes.DAL</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\desenfocado-1913.jpg" />
+    <Resource Include="Imagenes\fondodes.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -8,7 +8,7 @@
         Title="CDeportes" Height="652" Width="890">
     <Grid>
         <Grid.Background>
-            <ImageBrush/>
+            <ImageBrush ImageSource="Imagenes/desenfocado-1913.jpg"/>
         </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>

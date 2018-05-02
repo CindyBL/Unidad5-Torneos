@@ -7,6 +7,9 @@
         mc:Ignorable="d"
         Title="NuevoTorneo" Height="652" Width="890">
     <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="Imagenes/desenfocado-1913.jpg"/>
+        </Grid.Background>
         <TextBlock Grid.Row="0" Margin="117,37,664,544" Foreground="Black" Background="#FFFBFBFB" FontWeight="Bold" FontSize="21.333">Equipo1:</TextBlock>
         <ComboBox x:Name="cmbEquipo1" Grid.Row="0" Margin="223,37,496,544" Foreground="#FF42DE15" RenderTransformOrigin="0.5,0.5" FontSize="21.333">
             <ComboBox.Background>
@@ -50,7 +53,7 @@
                 <ImageBrush ImageSource="Imagenes/cancelar.png"/>
             </Button.Background>
         </Button>
-        <DataGrid x:Name="dtgTorneo" Margin="188,220,226,82"></DataGrid>
+        <DataGrid x:Name="dtgTorneo" Margin="188,220,226,82" FontSize="16"></DataGrid>
         <Button x:Name="btnRegresar" FontSize="21.333" Margin="710,539,0,10" Click="btnRegresar_Click">
             <Button.Background>
                 <ImageBrush ImageSource="Imagenes/regresar.png"/>

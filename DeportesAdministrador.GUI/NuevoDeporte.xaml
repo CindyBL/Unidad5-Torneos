@@ -7,6 +7,9 @@
         mc:Ignorable="d"
         Title="NuevoDeporte" Height="652" Width="890">
     <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="Imagenes/desenfocado-1913.jpg"/>
+        </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
@@ -57,7 +60,7 @@
                 <ImageBrush ImageSource="Imagenes/regresar.png"/>
             </Button.Background>
         </Button>
-        <DataGrid x:Name="dtgDeportes" Grid.ColumnSpan="2" Grid.Column="1" Margin="0,96,20,61" Grid.Row="1" Grid.RowSpan="2" FontSize="21.333"></DataGrid>
+        <DataGrid x:Name="dtgDeportes" Grid.ColumnSpan="2" Grid.Column="1" Margin="0,96,20,61" Grid.Row="1" Grid.RowSpan="2" FontSize="16"></DataGrid>
         <TextBlock Grid.Column="1" Margin="174,135,10,44" RenderTransformOrigin="0.473,0.63" FontSize="16" Foreground="#FF4ACF23" Background="White">Id:</TextBlock>
         <TextBlock x:Name="txbDeportesId" Grid.Column="2" Margin="10,131,20,44"/>
     </Grid>
