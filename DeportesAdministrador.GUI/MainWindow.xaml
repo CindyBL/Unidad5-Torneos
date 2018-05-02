@@ -28,7 +28,7 @@
         <TextBlock Grid.Column="1" Grid.Row="1" FontSize="21.333" Margin="33,77,167,101" FontWeight="Bold">Usuario:</TextBlock>
         <ComboBox x:Name="cmbUsuario" Grid.Column="1" Grid.Row="1" Margin="0,77,268,92" HorizontalAlignment="Right" Width="188" FontSize="21.333" Grid.ColumnSpan="2"></ComboBox>
         <TextBlock Grid.Column="1" Grid.Row="1" FontSize="21.333" Margin="10,167,167,10" FontWeight="Bold">Contraseña:</TextBlock>
-        <TextBox x:Name="txbContraseña" Grid.Column="1" Grid.Row="1" Margin="0,158,268,10" HorizontalAlignment="Right" Width="188" FontSize="21.333" Grid.ColumnSpan="2"></TextBox>
+        <PasswordBox x:Name="txbContraseña" Grid.Column="1" Grid.Row="1" Margin="0,158,268,10" HorizontalAlignment="Right" Width="188" FontSize="21.333" Grid.ColumnSpan="2"></PasswordBox>
         <Button x:Name="btnAceptar" Grid.Column="1" Grid.Row="2" Margin="132,30,10,122" FontSize="21.333" Click="btnAceptar_Click">Aceptar</Button>
     </Grid>
 </Window>

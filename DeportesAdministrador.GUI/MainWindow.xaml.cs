@@ -44,7 +44,7 @@ namespace DeportesAdministrador.GUI
             }
 
 
-            if (string.IsNullOrEmpty(txbContraseña.Text))
+            if (string.IsNullOrEmpty(txbContraseña.Password))
             {
                 MessageBox.Show("Aun no a ingresado la contraseña", "Inicio", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
@@ -56,7 +56,7 @@ namespace DeportesAdministrador.GUI
             {
 
                 Contraseña b = cmbUsuario.SelectedItem as Contraseña;
-                if (txbContraseña.Text == b.NuevaContraseña)
+                if (txbContraseña.Password == b.NuevaContraseña)
                 {
                     CDeportes ir = new CDeportes();
                     ir.Show();

@@ -8,5 +8,9 @@ namespace Deporte.COMMON.Entidades
     {
         public string Deporte { get; set; }
         public string NombreEquipo { get; set; }
+        public override string ToString()
+        {
+            return string.Format("{0} ({1})", NombreEquipo,Deporte);
+        }
     }
 }

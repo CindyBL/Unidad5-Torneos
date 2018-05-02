@@ -16,7 +16,19 @@
                 <ImageBrush ImageSource="Imagenes/regresar.png"/>
             </Button.Background>
         </Button>
+        <Button x:Name="btnEditar" Margin="664,169,164,401" FontSize="8" Foreground="#FF20D330" Click="btnEditar_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="Imagenes/editar.jpg"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="btnCancelar" Margin="723,169,104,401" FontSize="8" Foreground="#FF20D330" Click="btnCancelar_Click" RenderTransformOrigin="1.491,0.078">
+            <Button.Background>
+                <ImageBrush ImageSource="Imagenes/cancelar.png"/>
+            </Button.Background>
+        </Button>
         <Button x:Name="btnAceptar" Margin="384,349,368,227" FontSize="16" Click="btnAceptar_Click">Aceptar</Button>
         <DataGrid x:Name="dtgContraseña" Margin="308,434,324,106"></DataGrid>
+        <TextBlock Margin="613,292,227,312" RenderTransformOrigin="0.473,0.63" FontSize="16" Foreground="#FF4ACF23" Background="White">Id:</TextBlock>
+        <TextBlock x:Name="txbEquipoId" Margin="655,292,86,302"/>
     </Grid>
 </Window>

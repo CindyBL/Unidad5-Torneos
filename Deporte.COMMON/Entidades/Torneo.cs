@@ -6,6 +6,7 @@ namespace Deporte.COMMON.Entidades
 {
     public class Torneo:Base
     {
-        public string Deporte { get; set; }
+        public string Equipo1 { get; set; }
+        public string Equipo2 { get; set; }
     }
 }

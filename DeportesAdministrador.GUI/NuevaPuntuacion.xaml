@@ -7,8 +7,8 @@
         mc:Ignorable="d"
         Title="NuevaPuntuacion" Height="652" Width="890">
     <Grid>
-        <TextBlock Grid.Row="0" Margin="117,37,664,544" Foreground="Black" Background="#FFFBFBFB" FontWeight="Bold" FontSize="21.333">Deporte:</TextBlock>
-        <ComboBox x:Name="cmbDeporte" Grid.Row="0" Margin="223,37,496,544" Foreground="#FF42DE15" RenderTransformOrigin="0.5,0.5" FontSize="21.333">
+        <TextBlock Grid.Row="0" Margin="117,48,664,533" Foreground="Black" Background="#FFFBFBFB" FontWeight="Bold" FontSize="21.333">Equipo:</TextBlock>
+        <ComboBox x:Name="cmbEquipo" Grid.Row="0" Margin="223,48,496,533" Foreground="#FF42DE15" RenderTransformOrigin="0.5,0.5" FontSize="21.333">
             <ComboBox.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black" Offset="0"/>
@@ -16,17 +16,8 @@
                 </LinearGradientBrush>
             </ComboBox.Background>
         </ComboBox>
-        <TextBlock Grid.Row="0" Margin="117,104,664,477" Foreground="Black" Background="#FFFBFBFB" FontWeight="Bold" FontSize="21.333">Equipo:</TextBlock>
-        <ComboBox x:Name="cmbEquipo" Grid.Row="0" Margin="223,104,496,477" Foreground="#FF42DE15" RenderTransformOrigin="0.5,0.5" FontSize="21.333">
-            <ComboBox.Background>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="Black" Offset="0"/>
-                    <GradientStop Color="#FF857878" Offset="1"/>
-                </LinearGradientBrush>
-            </ComboBox.Background>
-        </ComboBox>
-        <TextBlock Grid.Row="0" Margin="117,175,664,406" Foreground="Black" Background="#FFFBFBFB" FontWeight="Bold" FontSize="21.333">Puntos:</TextBlock>
-        <TextBox x:Name="tbxPuntos" Grid.Row="0" Margin="223,175,496,406" Foreground="#FF42DE15" RenderTransformOrigin="0.5,0.5" FontSize="21.333">
+        <TextBlock Grid.Row="0" Margin="117,123,664,458" Foreground="Black" Background="#FFFBFBFB" FontWeight="Bold" FontSize="21.333">Puntos:</TextBlock>
+        <TextBox x:Name="txbPuntos" Grid.Row="0" Margin="218,123,501,458" Foreground="#FF42DE15" RenderTransformOrigin="0.5,0.5" FontSize="21.333">
             <TextBox.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black" Offset="0"/>
@@ -34,12 +25,38 @@
                 </LinearGradientBrush>
             </TextBox.Background>
         </TextBox>
-        <Button x:Name="btnCTorneo" Margin="532,71,145,501" FontSize="21.333">Agregar Puntuacion</Button>
-        <DataGrid x:Name="dtgTorneo" Margin="188,252,226,50"></DataGrid>
+        <Button x:Name="btnNuevo" Margin="585,149,251,419" FontSize="8" Foreground="#FF20D330" RenderTransformOrigin="0.625,0.648" Click="btnNuevo_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="Imagenes/nuevo.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="btnEditar" Margin="631,149,197,421" FontSize="8" Foreground="#FF20D330" Click="btnEditar_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="Imagenes/editar.jpg"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="btnGuardar" Margin="685,149,147,421" FontSize="8" Foreground="#FF20D330" Click="btnGuardar_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="Imagenes/guardar.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="btnEliminar" Margin="735,149,89,421" FontSize="8" Foreground="#FF20D330" Click="btnEliminar_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="Imagenes/eliminar.jpg"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="btnCancelar" Margin="793,149,34,421" FontSize="8" Foreground="#FF20D330" Click="btnCancelar_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="Imagenes/cancelar.png"/>
+            </Button.Background>
+        </Button>
+        <DataGrid x:Name="dtgPuntuacion" Margin="188,252,226,50"></DataGrid>
         <Button x:Name="btnRegresar" FontSize="21.333" Margin="710,539,0,10" Click="btnRegresar_Click">
             <Button.Background>
                 <ImageBrush ImageSource="Imagenes/regresar.png"/>
             </Button.Background>
         </Button>
+        <TextBlock Margin="117,185,723,419" RenderTransformOrigin="0.473,0.63" FontSize="16" Foreground="#FF4ACF23" Background="White">Id:</TextBlock>
+        <TextBlock x:Name="txbEquipoId" Margin="188,185,553,409"/>
     </Grid>
 </Window>

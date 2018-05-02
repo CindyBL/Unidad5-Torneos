@@ -108,5 +108,27 @@ namespace DeportesAdministrador.GUI
                 }
             }
         }
+
+        private void btnEditar_Click(object sender, RoutedEventArgs e)
+        {
+            Contraseña pro = dtgContraseña.SelectedItem as Contraseña;
+            if (pro != null)
+            {
+                txbEquipoId.Text = pro.Id;
+                txbUsuario.Text = pro.Usuario;
+                txbNuevaContraseña.Text = pro.NuevaContraseña;
+                accionn = accion.Editar;
+                HabilitarBotones(false);
+            }
+            else
+            {
+                MessageBox.Show("Seleccione el usuario que desea editar", "Contraseña", MessageBoxButton.OK, MessageBoxImage.Question);
+            }
+        }
+
+        private void btnCancelar_Click(object sender, RoutedEventArgs e)
+        {
+            txbNuevaContraseña.Clear();
+        }
     }
 }
