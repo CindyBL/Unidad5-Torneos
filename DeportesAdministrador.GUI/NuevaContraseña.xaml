@@ -30,8 +30,13 @@
             </Button.Background>
         </Button>
         <Button x:Name="btnAceptar" Margin="384,349,368,227" FontSize="18" Click="btnAceptar_Click" FontWeight="Bold">Aceptar</Button>
-        <DataGrid x:Name="dtgContraseña" Margin="308,434,324,106" FontSize="16"></DataGrid>
+        <DataGrid x:Name="dtgContraseña" Margin="270,418,280,10" FontSize="16"></DataGrid>
         <TextBlock Margin="613,292,227,312" RenderTransformOrigin="0.473,0.63" FontSize="16" Foreground="#FF4ACF23" Background="White">Id:</TextBlock>
         <TextBlock x:Name="txbEquipoId" Margin="655,292,86,302"/>
+        <Button x:Name="btnEliminar" Margin="723,227,71,350" FontSize="8" Foreground="#FF20D330" Click="btnEliminar_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="Imagenes/eliminar.jpg"/>
+            </Button.Background>
+        </Button>
     </Grid>
 </Window>

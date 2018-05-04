@@ -5,63 +5,34 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DeportesAdministrador.GUI"
         mc:Ignorable="d"
-        Title="NuevoTorneo" Height="652" Width="890">
+        Title="NuevoTorneo" Height="644" Width="936">
     <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="Imagenes/desenfocado-1913.jpg"/>
         </Grid.Background>
-        <TextBlock Grid.Row="0" Margin="117,37,664,544" Foreground="Black" Background="#FFFBFBFB" FontWeight="Bold" FontSize="21.333">Equipo1:</TextBlock>
-        <ComboBox x:Name="cmbEquipo1" Grid.Row="0" Margin="223,37,496,544" Foreground="#FF42DE15" RenderTransformOrigin="0.5,0.5" FontSize="21.333">
-            <ComboBox.Background>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="Black" Offset="0"/>
-                    <GradientStop Color="#FF857878" Offset="1"/>
-                </LinearGradientBrush>
-            </ComboBox.Background>
-        </ComboBox>
-        <TextBlock Grid.Row="0" Margin="117,97,664,484" Foreground="Black" Background="#FFFBFBFB" FontWeight="Bold" FontSize="21.333">Equipo2:</TextBlock>
-        <ComboBox x:Name="cmbEquipo2" Grid.Row="0" Margin="223,97,496,484" Foreground="#FF42DE15" RenderTransformOrigin="0.5,0.5" FontSize="21.333">
-            <ComboBox.Background>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="Black" Offset="0"/>
-                    <GradientStop Color="#FF857878" Offset="1"/>
-                </LinearGradientBrush>
-            </ComboBox.Background>
-        </ComboBox>
-        <TextBlock Margin="486,37,319,544" FontSize="18" FontWeight="Bold">Fecha:</TextBlock>
-        <DatePicker x:Name="dtpFechaTorneo" Margin="568,35,119,551" FontSize="16"></DatePicker>
-        <Button x:Name="btnNuevo" Margin="585,149,251,419" FontSize="8" Foreground="#FF20D330" RenderTransformOrigin="0.625,0.648" Click="btnNuevo_Click">
-            <Button.Background>
-                <ImageBrush ImageSource="Imagenes/nuevo.png"/>
-            </Button.Background>
+        <Label Foreground="#FFF2F2FF" FontSize="16" Margin="90,24,747,541" FontWeight="Bold" Background="#FF2B2424">Deporte:</Label>
+        <ComboBox x:Name="cmbTipoDeporteTorneo" Margin="206,24,524,541" />
+        <Button x:Name="btnNuevoTorneo" Click="btnNuevoTorneo_Click" Margin="51,105,770,466" Background="#FF4EA84E" Foreground="#FFFDFDFD">
+            <Label Foreground="#FFF5ECEC" FontWeight="Bold" FontSize="16">Nuevo</Label>
         </Button>
-        <Button x:Name="btnEditar" Margin="631,149,197,421" FontSize="8" Foreground="#FF20D330" Click="btnEditar_Click">
-            <Button.Background>
-                <ImageBrush ImageSource="Imagenes/editar.jpg"/>
-            </Button.Background>
+        <Button x:Name="btnOrdenarTorneo" Click="btnOrdenarTorneo_Click" Margin="163,105,661,466" Background="#FF67B01F" Foreground="#FFFDFDFD">
+
+            <Label Foreground="#FFF5ECEC" FontWeight="Bold" FontSize="16">Aceptar</Label>
         </Button>
-        <Button x:Name="btnGuardar" Margin="685,149,147,421" FontSize="8" Foreground="#FF20D330" Click="btnGuardar_Click">
-            <Button.Background>
-                <ImageBrush ImageSource="Imagenes/guardar.png"/>
-            </Button.Background>
+        <Button x:Name="btnEliminarTorneo" Click="btnEliminarTorneo_Click" Margin="289,105,544,466" Foreground="#FFFDFDFD" Background="#FF53B94E">
+            <Label Foreground="#FFF5ECEC" FontWeight="Bold" FontSize="16">Eliminar</Label>
+            
         </Button>
-        <Button x:Name="btnEliminar" Margin="735,149,89,421" FontSize="8" Foreground="#FF20D330" Click="btnEliminar_Click">
-            <Button.Background>
-                <ImageBrush ImageSource="Imagenes/eliminar.jpg"/>
-            </Button.Background>
+        <Button x:Name="btnCancelarTorneo" Click="btnCancelarTorneo_Click" Margin="416,105,410,466"  Background="#FF69CB25" Foreground="#FFFDFDFD">
+            <Label Foreground="#FFF5ECEC" FontWeight="Bold" FontSize="16">Cancelar</Label>
         </Button>
-        <Button x:Name="btnCancelar" Margin="793,149,34,421" FontSize="8" Foreground="#FF20D330" Click="btnCancelar_Click">
-            <Button.Background>
-                <ImageBrush ImageSource="Imagenes/cancelar.png"/>
-            </Button.Background>
-        </Button>
-        <DataGrid x:Name="dtgTorneo" Margin="188,220,226,82" FontSize="16"></DataGrid>
-        <Button x:Name="btnRegresar" FontSize="21.333" Margin="710,539,0,10" Click="btnRegresar_Click">
+        <DataGrid x:Name="dtgDatosDeporte2" Margin="144,246,242,190" IsReadOnly="True" Grid.Row="3" />
+        <DataGrid x:Name="dtgDatosDeporte" Grid.Row="3" Margin="90,246,242,85" IsReadOnly="true" />
+        <Button x:Name="btnRegresar" FontSize="21.333" Margin="774,546,0,10" Click="btnRegresar_Click">
             <Button.Background>
                 <ImageBrush ImageSource="Imagenes/regresar.png"/>
             </Button.Background>
         </Button>
-        <TextBlock Margin="154,152,686,446" RenderTransformOrigin="0.473,0.63" FontSize="16" Foreground="#FF4ACF23" Background="White">Id:</TextBlock>
-        <TextBlock x:Name="txbEquipoId" Margin="201,152,569,442"/>
+        <DataGrid x:Name="dtgPrueba" FontSize="14"  IsReadOnly="True" Margin="90,176,214,67" />
     </Grid>
 </Window>

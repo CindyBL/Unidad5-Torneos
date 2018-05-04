@@ -51,12 +51,6 @@ namespace DeportesAdministrador.GUI
         {
         }
 
-        //private void HabilitarCajas(bool habilitadas)
-        //{
-        //    txbNuevaContraseña.Clear();
-        //    txbNuevaContraseña.IsEnabled = habilitadas;
-        //}
-
         private void btnRegresar_Click(object sender, RoutedEventArgs e)
         {
             this.Hide();
@@ -71,7 +65,6 @@ namespace DeportesAdministrador.GUI
                 {
                     Contraseña emp = new Contraseña()
                     {
-                        // Identificador = txbEmpleadoId.Text,
                         Usuario = txbUsuario.Text,
                         NuevaContraseña = txbNuevaContraseña.Text,
 
@@ -108,6 +101,26 @@ namespace DeportesAdministrador.GUI
                     }
                 }
         }
+        private void btnEliminar_Click(object sender, RoutedEventArgs e)
+        {
+            Contraseña cli = dtgContraseña.SelectedItem as Contraseña;
+            if (cli != null)
+            {
+                if (MessageBox.Show("Realmente deseas eliminar este deporte?", "Deportes", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+                {
+                    if (manejadorContraseña.Eliminar(cli.Id))
+                    {
+                        MessageBox.Show("El deporte ha sido eliminado correctamente", "Farmacia", MessageBoxButton.OK, MessageBoxImage.Information);
+                        ActualizarTabla();
+                    }
+                    else
+                    {
+                        MessageBox.Show("El deporte no se pudo eliminar", "Farmacia", MessageBoxButton.OK, MessageBoxImage.Error);
+                    }
+
+                }
+            }
+        }
 
         private void btnEditar_Click(object sender, RoutedEventArgs e)
         {
@@ -130,5 +143,7 @@ namespace DeportesAdministrador.GUI
         {
             txbNuevaContraseña.Clear();
         }
+
+       
     }
 }

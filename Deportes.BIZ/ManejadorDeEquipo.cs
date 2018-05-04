@@ -29,6 +29,11 @@ namespace Deportes.BIZ
             return Listar.Where(e => e.Id == id).SingleOrDefault();
         }
 
+        public int ContadorDeBuscarEquipo(string palabra)
+        {
+            return Listar.Where(e => e.Deporte == palabra).ToList().Count();
+        }
+
         public bool Eliminar(ObjectId id)
         {
             return repositorio.Delete(id);

@@ -7,5 +7,6 @@ namespace Deporte.COMMON.Interfaces
 {
     public interface IManejadorEquipo : IManejadorGenerico<Equipo>
     {
+        int ContadorDeBuscarEquipo(string palabra);
     }
 }
