@@ -67,46 +67,46 @@ namespace DeportesAdministrador.GUI
 
         private void btnAceptar_Click(object sender, RoutedEventArgs e)
         {
-            if (accionn == accion.Nuevo)
-            {
-                Contraseña emp = new Contraseña()
+                if (accionn == accion.Nuevo)
                 {
-                    // Identificador = txbEmpleadoId.Text,
-                    Usuario = txbUsuario.Text,
-                    NuevaContraseña = txbNuevaContraseña.Text,
+                    Contraseña emp = new Contraseña()
+                    {
+                        // Identificador = txbEmpleadoId.Text,
+                        Usuario = txbUsuario.Text,
+                        NuevaContraseña = txbNuevaContraseña.Text,
 
 
 
 
-                };
-                if (manejadorContraseña.Agregar(emp))
-                {
-                    MessageBox.Show("la contraseña se ha cambiado correctamente  ", "Deportes", MessageBoxButton.OK, MessageBoxImage.Information);
-                    //HabilitarCajas(false);
-                    ActualizarTabla();
+                    };
+                    if (manejadorContraseña.Agregar(emp))
+                    {
+                        MessageBox.Show("la contraseña se ha cambiado correctamente  ", "Deportes", MessageBoxButton.OK, MessageBoxImage.Information);
+                        //HabilitarCajas(false);
+                        ActualizarTabla();
+                    }
+                    else
+                    {
+                        MessageBox.Show("la contraseña no se pudo cambiar  ", "Deportes", MessageBoxButton.OK, MessageBoxImage.Error);
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("la contraseña no se pudo cambiar  ", "Deportes", MessageBoxButton.OK, MessageBoxImage.Error);
-                }
-            }
-            else
-            {
-                Contraseña emp = dtgContraseña.SelectedItem as Contraseña;
-                emp.Usuario = txbUsuario.Text;
-                emp.NuevaContraseña = txbNuevaContraseña.Text;
+                    Contraseña emp = dtgContraseña.SelectedItem as Contraseña;
+                    emp.Usuario = txbUsuario.Text;
+                    emp.NuevaContraseña = txbNuevaContraseña.Text;
 
 
-                if (manejadorContraseña.Modificar(emp))
-                {
-                    MessageBox.Show("la contraseña ha sido modificada exitosañente  ", "Deportes", MessageBoxButton.OK, MessageBoxImage.Information);
-                    ActualizarTabla();
+                    if (manejadorContraseña.Modificar(emp))
+                    {
+                        MessageBox.Show("la contraseña ha sido modificada exitosañente  ", "Deportes", MessageBoxButton.OK, MessageBoxImage.Information);
+                        ActualizarTabla();
+                    }
+                    else
+                    {
+                        MessageBox.Show("El Usuario no se pudo actualizar  ", "Torneo", MessageBoxButton.OK, MessageBoxImage.Error);
+                    }
                 }
-                else
-                {
-                    MessageBox.Show("El Usuario no se pudo actualizar  ", "Torneo", MessageBoxButton.OK, MessageBoxImage.Error);
-                }
-            }
         }
 
         private void btnEditar_Click(object sender, RoutedEventArgs e)

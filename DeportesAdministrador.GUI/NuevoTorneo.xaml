@@ -28,6 +28,8 @@
                 </LinearGradientBrush>
             </ComboBox.Background>
         </ComboBox>
+        <TextBlock Margin="486,37,319,544" FontSize="18" FontWeight="Bold">Fecha:</TextBlock>
+        <DatePicker x:Name="dtpFechaTorneo" Margin="568,35,119,551" FontSize="16"></DatePicker>
         <Button x:Name="btnNuevo" Margin="585,149,251,419" FontSize="8" Foreground="#FF20D330" RenderTransformOrigin="0.625,0.648" Click="btnNuevo_Click">
             <Button.Background>
                 <ImageBrush ImageSource="Imagenes/nuevo.png"/>

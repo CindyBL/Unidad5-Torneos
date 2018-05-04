@@ -102,42 +102,42 @@ namespace DeportesAdministrador.GUI
 
         private void btnGuardar_Click(object sender, RoutedEventArgs e)
         {
-            if (accionPuntuacion == accion.Nuevo)
-            {
-                Puntuacion pro = new Puntuacion()
+                if (accionPuntuacion == accion.Nuevo)
                 {
-                    Puntos = txbPuntos.Text,
-                    Equipo = cmbEquipo.Text,
-                };
-                if (manejadorPuntuacion.Agregar(pro))
-                {
-                    MessageBox.Show("La puntuacion se ha agregado correctamente", "Puntuacion", MessageBoxButton.OK, MessageBoxImage.Information);
-                    ActualizarTabla();
-                    HabilitarBotones(true);
-                    HabilitarCajas(false);
+                    Puntuacion pro = new Puntuacion()
+                    {
+                        Puntos = txbPuntos.Text,
+                        Equipo = cmbEquipo.Text,
+                    };
+                    if (manejadorPuntuacion.Agregar(pro))
+                    {
+                        MessageBox.Show("La puntuacion se ha agregado correctamente", "Puntuacion", MessageBoxButton.OK, MessageBoxImage.Information);
+                        ActualizarTabla();
+                        HabilitarBotones(true);
+                        HabilitarCajas(false);
+                    }
+                    else
+                    {
+                        MessageBox.Show("La puntuacion no se pudo agregar", "Puntuacion", MessageBoxButton.OK, MessageBoxImage.Error);
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("La puntuacion no se pudo agregar", "Puntuacion", MessageBoxButton.OK, MessageBoxImage.Error);
+                    Puntuacion pro = dtgPuntuacion.SelectedItem as Puntuacion;
+                    pro.Puntos = txbPuntos.Text;
+                    pro.Equipo = cmbEquipo.Text;
+                    if (manejadorPuntuacion.Modificar(pro))
+                    {
+                        MessageBox.Show("Puntuacion modificado correctamente", "Puntuacion", MessageBoxButton.OK, MessageBoxImage.Information);
+                        ActualizarTabla();
+                        HabilitarBotones(true);
+                        HabilitarCajas(false);
+                    }
+                    else
+                    {
+                        MessageBox.Show("La puntuacion no se pudo actualizar", "Puntuacion", MessageBoxButton.OK, MessageBoxImage.Error);
+                    }
                 }
-            }
-            else
-            {
-                Puntuacion pro = dtgPuntuacion.SelectedItem as Puntuacion;
-                pro.Puntos = txbPuntos.Text;
-                pro.Equipo = cmbEquipo.Text;
-                if (manejadorPuntuacion.Modificar(pro))
-                {
-                    MessageBox.Show("Puntuacion modificado correctamente", "Puntuacion", MessageBoxButton.OK, MessageBoxImage.Information);
-                    ActualizarTabla();
-                    HabilitarBotones(true);
-                    HabilitarCajas(false);
-                }
-                else
-                {
-                    MessageBox.Show("La puntuacion no se pudo actualizar", "Puntuacion", MessageBoxButton.OK, MessageBoxImage.Error);
-                }
-            }
         }
 
         private void btnEliminar_Click(object sender, RoutedEventArgs e)

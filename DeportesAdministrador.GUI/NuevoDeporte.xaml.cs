@@ -97,41 +97,42 @@ namespace DeportesAdministrador.GUI
 
         private void btnGuardar_Click(object sender, RoutedEventArgs e)
         {
-            if (accionDeporte == accion.Nuevo)
-            {
-                Deportess cli = new Deportess()
+                if (accionDeporte == accion.Nuevo)
                 {
-                    NombreDeporte = txbNombreDeporte.Text,
+                    Deportess cli = new Deportess()
+                    {
+                        NombreDeporte = txbNombreDeporte.Text,
 
-                };
-                if (manejadorDeporte.Agregar(cli))
-                {
-                    MessageBox.Show("Deporte agregado correctamente", "Deportes", MessageBoxButton.OK, MessageBoxImage.Information);
-                    ActualizarTabla();
-                    HabilitarBotones(true);
-                    HabilitarCajas(false);
+                    };
+                    if (manejadorDeporte.Agregar(cli))
+                    {
+                        MessageBox.Show("Deporte agregado correctamente", "Deportes", MessageBoxButton.OK, MessageBoxImage.Information);
+                        ActualizarTabla();
+                        HabilitarBotones(true);
+                        HabilitarCajas(false);
+                    }
+                    else
+                    {
+                        MessageBox.Show("El deporte no se puede agregar", "Deportes", MessageBoxButton.OK, MessageBoxImage.Error);
+                    }
+
                 }
                 else
                 {
-                    MessageBox.Show("El deporte no se puede agregar", "Deportes", MessageBoxButton.OK, MessageBoxImage.Error);
+                    Deportess cli = dtgDeportes.SelectedItem as Deportess;
+                    cli.NombreDeporte = txbNombreDeporte.Text;
+                    if (manejadorDeporte.Modificar(cli))
+                    {
+                        MessageBox.Show("Deporte modificado correctamente", "Deportes", MessageBoxButton.OK, MessageBoxImage.Information);
+                        ActualizarTabla();
+                        HabilitarBotones(true);
+                        HabilitarCajas(false);
+                    }
+                    else
+                    {
+                        MessageBox.Show("El deporte no se pudo actualizar coreectamente", "Deportes", MessageBoxButton.OK, MessageBoxImage.Error);
+                    }
                 }
-            }
-            else
-            {
-                Deportess cli = dtgDeportes.SelectedItem as Deportess;
-                cli.NombreDeporte = txbNombreDeporte.Text;
-                if (manejadorDeporte.Modificar(cli))
-                {
-                    MessageBox.Show("Deporte modificado correctamente", "Deportes", MessageBoxButton.OK, MessageBoxImage.Information);
-                    ActualizarTabla();
-                    HabilitarBotones(true);
-                    HabilitarCajas(false);
-                }
-                else
-                {
-                    MessageBox.Show("El deporte no se pudo actualizar coreectamente", "Deportes", MessageBoxButton.OK, MessageBoxImage.Error);
-                }
-            }
         }
 
         private void btnCancelar_Click(object sender, RoutedEventArgs e)

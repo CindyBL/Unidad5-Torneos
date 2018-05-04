@@ -8,5 +8,6 @@ namespace Deporte.COMMON.Entidades
     {
         public string Equipo1 { get; set; }
         public string Equipo2 { get; set; }
+        public DateTime FechaTorneo { get; set; }
     }
 }

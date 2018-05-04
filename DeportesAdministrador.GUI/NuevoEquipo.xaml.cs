@@ -129,42 +129,42 @@ namespace DeportesAdministrador.GUI
 
         private void btnGuardar_Click(object sender, RoutedEventArgs e)
         {
-            if (accionEquipo == accion.Nuevo)
-            {
-                Equipo pro = new Equipo()
+                if (accionEquipo == accion.Nuevo)
                 {
-                    NombreEquipo = txbNombreEquipo.Text,
-                    Deporte = cmbDeporte.Text,
-                };
-                if (manejadorEquipo.Agregar(pro))
-                {
-                    MessageBox.Show("Equipo agregado correctamente", "Equipo", MessageBoxButton.OK, MessageBoxImage.Information);
-                    ActualizarTabla();
-                    HabilitarBotones(true);
-                    HabilitarCajas(false);
+                    Equipo pro = new Equipo()
+                    {
+                        NombreEquipo = txbNombreEquipo.Text,
+                        Deporte = cmbDeporte.Text,
+                    };
+                    if (manejadorEquipo.Agregar(pro))
+                    {
+                        MessageBox.Show("Equipo agregado correctamente", "Equipo", MessageBoxButton.OK, MessageBoxImage.Information);
+                        ActualizarTabla();
+                        HabilitarBotones(true);
+                        HabilitarCajas(false);
+                    }
+                    else
+                    {
+                        MessageBox.Show("El equipo no se pudo agregar", "Equipos", MessageBoxButton.OK, MessageBoxImage.Error);
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("El equipo no se pudo agregar", "Equipos", MessageBoxButton.OK, MessageBoxImage.Error);
+                    Equipo pro = dtgEquipos.SelectedItem as Equipo;
+                    pro.NombreEquipo = txbNombreEquipo.Text;
+                    pro.Deporte = cmbDeporte.Text;
+                    if (manejadorEquipo.Modificar(pro))
+                    {
+                        MessageBox.Show("Equipo modificado correctamente", "Equipos", MessageBoxButton.OK, MessageBoxImage.Information);
+                        ActualizarTabla();
+                        HabilitarBotones(true);
+                        HabilitarCajas(false);
+                    }
+                    else
+                    {
+                        MessageBox.Show("El equipo no se pudo actualizar", "Farmacia", MessageBoxButton.OK, MessageBoxImage.Error);
+                    }
                 }
-            }
-            else
-            {
-                Equipo pro = dtgEquipos.SelectedItem as Equipo;
-                pro.NombreEquipo = txbNombreEquipo.Text;
-                pro.Deporte = cmbDeporte.Text;
-                if (manejadorEquipo.Modificar(pro))
-                {
-                    MessageBox.Show("Equipo modificado correctamente", "Equipos", MessageBoxButton.OK, MessageBoxImage.Information);
-                    ActualizarTabla();
-                    HabilitarBotones(true);
-                    HabilitarCajas(false);
-                }
-                else
-                {
-                    MessageBox.Show("El equipo no se pudo actualizar", "Farmacia", MessageBoxButton.OK, MessageBoxImage.Error);
-                }
-            }
         }
     }
 }

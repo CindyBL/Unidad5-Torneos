@@ -92,6 +92,7 @@ namespace DeportesAdministrador.GUI
                 txbEquipoId.Text = pro.Id.ToString();
                 cmbEquipo1.Text = pro.Equipo1;
                 cmbEquipo2.Text = pro.Equipo2;
+                dtpFechaTorneo.SelectedDate = pro.FechaTorneo;
                 accionTorneo = accion.Editar;
                 HabilitarBotones(false);
             }
@@ -103,41 +104,50 @@ namespace DeportesAdministrador.GUI
 
         private void btnGuardar_Click(object sender, RoutedEventArgs e)
         {
-            if (accionTorneo == accion.Nuevo)
+            if (dtpFechaTorneo.SelectedDate != null && cmbEquipo1.Text != null && cmbEquipo2.Text != null)
             {
-                Torneo pro = new Torneo()
-                {
-                    Equipo1 = cmbEquipo1.Text,
-                    Equipo2 = cmbEquipo2.Text,
-                };
-                if (manejadorTorneo.Agregar(pro))
-                {
-                    MessageBox.Show("Torneo agregado correctamente", "Torneo", MessageBoxButton.OK, MessageBoxImage.Information);
-                    ActualizarTabla();
-                    HabilitarBotones(true);
-                    HabilitarCajas(false);
+                if (accionTorneo == accion.Nuevo)
+            {
+                    Torneo pro = new Torneo()
+                    {
+                        Equipo1 = cmbEquipo1.Text,
+                        Equipo2 = cmbEquipo2.Text,
+                        FechaTorneo = dtpFechaTorneo.SelectedDate.Value,
+                    };
+                    if (manejadorTorneo.Agregar(pro))
+                    {
+                        MessageBox.Show("Torneo agregado correctamente", "Torneo", MessageBoxButton.OK, MessageBoxImage.Information);
+                        ActualizarTabla();
+                        HabilitarBotones(true);
+                        HabilitarCajas(false);
+                    }
+                    else
+                    {
+                        MessageBox.Show("El Torneo no se pudo agregar", "Torneo", MessageBoxButton.OK, MessageBoxImage.Error);
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("El Torneo no se pudo agregar", "Torneo", MessageBoxButton.OK, MessageBoxImage.Error);
+                    Torneo pro = dtgTorneo.SelectedItem as Torneo;
+                    pro.Equipo1 = cmbEquipo1.Text;
+                    pro.Equipo2 = cmbEquipo2.Text;
+                    pro.FechaTorneo = dtpFechaTorneo.SelectedDate.Value;
+                    if (manejadorTorneo.Modificar(pro))
+                    {
+                        MessageBox.Show("Torneo modificado correctamente", "Torneo", MessageBoxButton.OK, MessageBoxImage.Information);
+                        ActualizarTabla();
+                        HabilitarBotones(true);
+                        HabilitarCajas(false);
+                    }
+                    else
+                    {
+                        MessageBox.Show("El torneo no se pudo actualizar", "Torneo", MessageBoxButton.OK, MessageBoxImage.Error);
+                    }
                 }
             }
             else
             {
-                Torneo pro = dtgTorneo.SelectedItem as Torneo;
-                pro.Equipo1 = cmbEquipo1.Text;
-                pro.Equipo2 = cmbEquipo2.Text;
-                if (manejadorTorneo.Modificar(pro))
-                {
-                    MessageBox.Show("Torneo modificado correctamente", "Torneo", MessageBoxButton.OK, MessageBoxImage.Information);
-                    ActualizarTabla();
-                    HabilitarBotones(true);
-                    HabilitarCajas(false);
-                }
-                else
-                {
-                    MessageBox.Show("El torneo no se pudo actualizar", "Torneo", MessageBoxButton.OK, MessageBoxImage.Error);
-                }
+                MessageBox.Show("Aun faltan campos por llenar", "Torneo", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 
