@@ -30,8 +30,8 @@ namespace DeportesGraficos.GUI
         public RTorneos()
         {
             InitializeComponent();
-            manejadorDeporte = new ManejadorDeDeportes(new RepositorioDeportes());
-            manejadorEquipo = new ManejadorDeEquipo(new RepositorioEquipo());
+            manejadorDeporte = new ManejadorDeDeportes(new RepositorioGenerico<Deportess>());
+            manejadorEquipo = new ManejadorDeEquipo(new RepositorioGenerico<Equipo>());
             cmbDeporte.ItemsSource = manejadorDeporte.Listar;
             //cmbEquipo.ItemsSource = manejadorEquipo.Listar;
         }
